@@ -20,7 +20,7 @@ def part2(skimap, slope):
     hits = 0
     for i in range(0, len(skimap), slope[1]):
         line = skimap[i]
-        position = i * slope[0] % width
+        position = i//slope[1] * slope[0] % width
         if line[position] == '#':
             hits += 1
     return hits
